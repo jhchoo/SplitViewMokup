@@ -52,9 +52,12 @@ class SecondViewController: UIViewController {
             return
         }
         
-        // 태블릿이 3번 인덱스 일때, 메뉴는 닫는다.
+        
         self.splitView?.toggleMasterView()
         
+        if let navController = splitViewController?.viewControllers[0] as? UINavigationController {
+            navController.popViewController(animated: true)
+        }
     }
 }
 
